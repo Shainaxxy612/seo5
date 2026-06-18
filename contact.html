@@ -5,47 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- SEO Meta Tags -->
-  <title>陳如雪的鞋子商店</title>
-  <meta name="description" content="StrideElite 邁步精英鞋類品牌概念店提供最優質的男鞋、女鞋、童鞋系列，以及頂級鞋類保養用品與專屬配件。融合精湛手工工藝與現代避震科技，為您打造極致完美的舒適步伐。">
-  <meta name="keywords" content="StrideElite, 男鞋, 女鞋, 童鞋, 皮鞋, 運動鞋, 登山靴, 鞋子保養, 鞋墊, 購物網站">
+  <title>聯絡我們與門市資訊 | StrideElite 邁步精英</title>
+  <meta name="description" content="聯絡 StrideElite 客服團隊。台北旗艦店門市地址、營業時間、電話及線上諮詢表單。">
+  <meta name="keywords" content="聯絡我們, 門市地址, 台北安全鞋店, 鋼頭安全鞋專賣店, 線上留言">
   <meta name="author" content="StrideElite Co.">
-  <meta name="robots" content="index, follow">
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="StrideElite 邁步精英 | 尊榮頂級鞋類品牌概念店">
-  <meta property="og:description" content="融合經典手工工藝與現代材料科技，為您提供無與倫比的舒適與優雅。全館滿 NT$ 1500 免運，享 7 天尺寸免費退換貨。">
-  <meta property="og:image" content="assets/images/logo.png">
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/logo.png">
   
   <!-- Stylesheets -->
-  <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Custom CSS Stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
   <!-- App Sticky Navbar (Header) -->
-  <header class="app-header" id="app-header">
-    <!-- Rendered Dynamically by js/components.js and js/app.js -->
-  </header>
+  <header class="app-header" id="app-header"></header>
 
-  <!-- Main View Container (Dynamic Content) -->
+  <!-- Main View Container -->
   <main class="main-content" id="main-content">
-    <!-- Loaded Dynamically via Router (Home, About, Mens, Womens, Kids, Care, Accessories, Contact, Detail) -->
     <div style="padding: 100px; text-align: center;">
       <i class="fas fa-spinner fa-spin" style="font-size: 3rem; color: var(--primary-gold); margin-bottom: 20px;"></i>
-      <h2>載入 StrideElite 精品商城中...</h2>
+      <h2>載入聯絡表單與門市地圖中...</h2>
     </div>
   </main>
 
   <!-- App Footer -->
-  <footer class="app-footer" id="app-footer">
-    <!-- Rendered Dynamically by js/components.js and js/app.js -->
-  </footer>
+  <footer class="app-footer" id="app-footer"></footer>
 
   <!-- Sidebar Cart Widget -->
   <div class="cart-sidebar" id="cart-sidebar">
@@ -55,12 +41,7 @@
         <i class="fas fa-times"></i>
       </button>
     </div>
-    
-    <!-- Dynamic Cart Item List -->
-    <div class="cart-items-list" id="cart-items-list">
-      <!-- Generated dynamically by js/app.js -->
-    </div>
-    
+    <div class="cart-items-list" id="cart-items-list"></div>
     <div class="cart-footer">
       <div class="cart-total-row">
         <span class="cart-total-label">總金額 (Subtotal):</span>
@@ -72,31 +53,23 @@
     </div>
   </div>
 
-  <!-- Global Backdrop overlay (for Cart & Drawer) -->
   <div class="overlay-backdrop" id="overlay-backdrop"></div>
 
-  <!-- Application Logic Scripts -->
-  <!-- 1. Database -->
+  <!-- Scripts -->
   <script src="js/products.js"></script>
-  <!-- 2. Reusable UI Templates -->
   <script src="js/components.js"></script>
-  <!-- 3. Router and Controllers -->
   <script src="js/app.js"></script>
   
   <script>
-    // 綁定頁尾的靜態內容加載（由於 Footer 為 SPA 全局，因此在頁面載入後自動渲染）
     document.addEventListener('DOMContentLoaded', () => {
       const footer = document.getElementById('app-footer');
       if (footer) {
         footer.innerHTML = getFooterHTML();
-        
-        // 訂閱表單模擬提交
         const newsletterForm = document.getElementById('newsletter-form');
         if (newsletterForm) {
           newsletterForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const emailInput = newsletterForm.querySelector('input');
-            const email = emailInput.value;
+            const email = newsletterForm.querySelector('input').value;
             showToast(`感謝訂閱！折扣碼已發送至 ${email}`);
             newsletterForm.reset();
           });

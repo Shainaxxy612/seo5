@@ -3,19 +3,19 @@
 // 渲染頂部導航欄
 function getHeaderHTML(activePage, cartItemCount = 0) {
   const pages = [
-    { id: 'home', name: '首頁' },
-    { id: 'about', name: '公司簡介' },
-    { id: 'mens', name: '男鞋' },
-    { id: 'womens', name: '女鞋' },
-    { id: 'kids', name: '童鞋' },
-    { id: 'care', name: '鞋類維護' },
-    { id: 'accessories', name: '配件' },
-    { id: 'contact', name: '聯絡我們' }
+    { id: 'home', name: '首頁', url: 'index.html' },
+    { id: 'about', name: '公司簡介', url: 'about.html' },
+    { id: 'mens', name: '男鞋', url: 'mens.html' },
+    { id: 'womens', name: '女鞋', url: 'womens.html' },
+    { id: 'kids', name: '童鞋', url: 'kids.html' },
+    { id: 'care', name: '鞋類維護', url: 'care.html' },
+    { id: 'accessories', name: '配件', url: 'accessories.html' },
+    { id: 'contact', name: '聯絡我們', url: 'contact.html' }
   ];
 
   const navItemsHTML = pages.map(page => `
     <li>
-      <a href="#${page.id}" class="nav-link ${activePage === page.id ? 'active' : ''}" data-page="${page.id}">
+      <a href="${page.url}" class="nav-link ${activePage === page.id ? 'active' : ''}" data-page="${page.id}">
         ${page.name}
       </a>
     </li>
@@ -23,7 +23,7 @@ function getHeaderHTML(activePage, cartItemCount = 0) {
 
   return `
     <div class="header-container">
-      <a href="#home" class="logo-link">
+      <a href="index.html" class="logo-link">
         <img src="assets/images/logo.png" alt="StrideElite Logo" class="logo-img">
         <span class="logo-text">StrideElite</span>
       </a>
@@ -65,18 +65,18 @@ function getFooterHTML() {
       <div class="footer-links-panel">
         <h4>探索類別</h4>
         <ul>
-          <li><a href="#mens">紳士男鞋系列</a></li>
-          <li><a href="#womens">時尚女鞋系列</a></li>
-          <li><a href="#kids">歡樂童鞋系列</a></li>
-          <li><a href="#accessories">精選配件系列</a></li>
+          <li><a href="mens.html">紳士男鞋系列</a></li>
+          <li><a href="womens.html">時尚女鞋系列</a></li>
+          <li><a href="kids.html">歡樂童鞋系列</a></li>
+          <li><a href="accessories.html">精選配件系列</a></li>
         </ul>
       </div>
       <div class="footer-links-panel">
         <h4>售後服務</h4>
         <ul>
-          <li><a href="#care">專業鞋類維護指南</a></li>
-          <li><a href="#about">品牌故事與精神</a></li>
-          <li><a href="#contact">門市資訊與聯絡</a></li>
+          <li><a href="care.html">專業鞋類維護指南</a></li>
+          <li><a href="about.html">品牌故事與精神</a></li>
+          <li><a href="contact.html">門市資訊與聯絡</a></li>
           <li><a href="#">退換貨政策</a></li>
         </ul>
       </div>
@@ -122,7 +122,7 @@ function getProductCardHTML(product) {
     <div class="product-card glass-panel" data-id="${product.id}">
       ${discountBadgeHTML}
       <div class="product-img-holder">
-        <a href="#product/${product.id}">
+        <a href="product.html?id=${product.id}">
           <img src="${product.image}" alt="${product.name}" loading="lazy">
         </a>
       </div>
@@ -134,7 +134,7 @@ function getProductCardHTML(product) {
           </span>
         </div>
         <h3 class="product-card-title">
-          <a href="#product/${product.id}">${product.name}</a>
+          <a href="product.html?id=${product.id}">${product.name}</a>
         </h3>
         <div class="product-card-bottom">
           <div class="price-box">

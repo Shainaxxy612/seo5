@@ -203,8 +203,7 @@ function openCartSidebar() {
 // --- 路由系統 (Router) ---
 function initRouter() {
   const handleRouting = () => {
-    const hash = window.location.hash || '#home';
-    const parsed = parseHash(hash);
+    const parsed = parsePathname();
     appState.currentView = parsed.page;
     appState.currentProductId = parsed.id;
     
@@ -218,17 +217,36 @@ function initRouter() {
     if (navMenu) navMenu.classList.remove('open');
   };
 
-  window.addEventListener('hashchange', handleRouting);
   window.addEventListener('load', handleRouting);
 }
 
-function parseHash(hash) {
-  // 格式如 #product/men-runner
-  const parts = hash.slice(1).split('/');
-  return {
-    page: parts[0] || 'home',
-    id: parts[1] || null
+function parsePathname() {
+  const path = window.location.pathname;
+  let pageName = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
+  
+  // 映射實體 HTML 檔名到對應的視圖
+  const pageMap = {
+    'index.html': 'home',
+    'about.html': 'about',
+    'mens.html': 'mens',
+    'womens.html': 'womens',
+    'kids.html': 'kids',
+    'care.html': 'care',
+    'accessories.html': 'accessories',
+    'contact.html': 'contact',
+    'product.html': 'product'
   };
+  
+  let page = pageMap[pageName.toLowerCase()] || 'home';
+  
+  // 如果是 product.html，我們從 URL search 參數獲取 id
+  let id = null;
+  if (page === 'product') {
+    const params = new URLSearchParams(window.location.search);
+    id = params.get('id');
+  }
+  
+  return { page, id };
 }
 
 function renderHeaderSection() {
@@ -294,7 +312,7 @@ function renderView() {
         container.innerHTML = getProductDetailViewHTML(appState.currentProductId);
         setupProductDetailEvents();
       } else {
-        window.location.hash = '#home';
+        window.location.href = 'index.html';
       }
       break;
     default:
@@ -335,7 +353,7 @@ function getHomeViewHTML() {
           <p class="section-subtitle">為您的日常生活、工作及戶外運動，尋找最合適的專屬配置</p>
         </div>
         <div class="grid-categories">
-          <div class="category-card" onclick="window.location.hash = '#mens'">
+          <div class="category-card" onclick="window.location.href = 'mens.html'">
             <div class="category-img-wrapper">
               <img src="assets/images/陳如雪的鞋子商店-經典紳士鞋.png" alt="陳如雪的鞋子商店-經典紳士鞋" title="陳如雪的鞋子商店-經典紳士鞋">
             </div>
@@ -344,7 +362,7 @@ function getHomeViewHTML() {
               <p>商務皮鞋、越野登山、高能跑鞋</p>
             </div>
           </div>
-          <div class="category-card" onclick="window.location.hash = '#womens'">
+          <div class="category-card" onclick="window.location.href = 'womens.html'">
             <div class="category-img-wrapper">
               <img src="assets/images/women_heels.png" alt="女鞋系列">
             </div>
@@ -353,7 +371,7 @@ function getHomeViewHTML() {
               <p>氣質高跟、休閒樂福、飛織跑鞋</p>
             </div>
           </div>
-          <div class="category-card" onclick="window.location.hash = '#kids'">
+          <div class="category-card" onclick="window.location.href = 'kids.html'">
             <div class="category-img-wrapper">
               <img src="assets/images/kids_runner.png" alt="童鞋系列">
             </div>
@@ -937,15 +955,15 @@ function getProductDetailViewHTML(productId) {
     accessories: '專屬配件'
   };
   const categoryLinkHash = {
-    mens: '#mens',
-    womens: '#womens',
-    kids: '#kids',
-    care: '#care',
-    accessories: '#accessories'
+    mens: 'mens.html',
+    womens: 'womens.html',
+    kids: 'kids.html',
+    care: 'care.html',
+    accessories: 'accessories.html'
   };
   
   const categoryChinese = categoryNames[product.category] || '精選商品';
-  const categoryHash = categoryLinkHash[product.category] || '#home';
+  const categoryHash = categoryLinkHash[product.category] || 'index.html';
 
   const hasOriginalPrice = product.originalPrice && product.originalPrice > product.price;
   const originalPriceHTML = hasOriginalPrice ? `<span class="detail-price-orig">原價 NT$ ${product.originalPrice}</span>` : '';
