@@ -7,7 +7,7 @@ const productsData = [
     category: "mens",
     price: 3680,
     originalPrice: 4200,
-    image: "assets/images/陳如雪的鞋子商店-極光運動鞋.png",alt:"陳如雪的鞋子商店-極光運動鞋",title:"陳如雪的鞋子商店-極光運動鞋",
+    image: "assets/images/men_runner.png", alt: "極光炫能專業跑鞋 (Aurora Speed Runner)", title: "極光炫能專業跑鞋 (Aurora Speed Runner)",
     description: "StrideElite 旗艦級運動跑鞋。採用極光橘與暗黑的科技編織網眼鞋面，融合最新一波 AirFlow 透氣科技與高彈力氮氣避震中底。不論是日常慢跑還是馬拉松競速，都能為您提供強勁的推進力與完美的腳感回饋。",
     features: [
       "極光霓虹與酷黑雙色立體編織鞋面，吸睛且極具科技感",

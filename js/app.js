@@ -296,8 +296,16 @@ function renderView() {
     case 'womens':
     case 'kids':
     case 'accessories':
-      container.innerHTML = getCategoryViewHTML(appState.currentView);
-      setupCategoryEvents();
+      // 檢查是否已有靜態的商品列表容器（使用者在 HTML 內寫死以方便修改的情況）
+      const staticGrid = container.querySelector('#category-products-grid');
+      if (staticGrid && staticGrid.children.length > 0 && !container.querySelector('.fa-spinner')) {
+        // 如果已經有靜態 HTML 卡片，則只進行事件綁定，不覆寫 HTML
+        setupCategoryEvents(true);
+      } else {
+        // 否則，進行完整的動態 HTML 渲染
+        container.innerHTML = getCategoryViewHTML(appState.currentView);
+        setupCategoryEvents(false);
+      }
       break;
     case 'care':
       container.innerHTML = getCareViewHTML();
@@ -339,9 +347,9 @@ function getHomeViewHTML() {
           <h2 class="hero-title">邁步出眾，舒適相伴每一英里</h2>
           <p class="hero-description">融合現代美學設計與極致舒適的機能工藝，StrideElite 為追求極致品味的您打造每一雙無可挑剔的完美鞋履。</p>
           <div class="hero-buttons">
-            <a href="#mens" class="btn btn-primary">選購男鞋</a>
-            <a href="#womens" class="btn btn-primary">選購女鞋</a>
-            <a href="#about" class="btn btn-secondary">品牌故事</a>
+            <a href="mens.html" class="btn btn-primary">選購男鞋</a>
+            <a href="womens.html" class="btn btn-primary">選購女鞋</a>
+            <a href="about.html" class="btn btn-secondary">品牌故事</a>
           </div>
         </div>
       </section>
@@ -355,7 +363,7 @@ function getHomeViewHTML() {
         <div class="grid-categories">
           <div class="category-card" onclick="window.location.href = 'mens.html'">
             <div class="category-img-wrapper">
-              <img src="assets/images/陳如雪的鞋子商店-經典紳士鞋.png" alt="陳如雪的鞋子商店-經典紳士鞋" title="陳如雪的鞋子商店-經典紳士鞋">
+              <img src="assets/images/men_oxford.png" alt="紳士男鞋系列" title="紳士男鞋系列">
             </div>
             <div class="category-info">
               <h3>紳士男鞋系列</h3>
@@ -550,7 +558,7 @@ function getCategoryViewHTML(category) {
   `;
 }
 
-function setupCategoryEvents() {
+function setupCategoryEvents(isStatic = false) {
   const searchInput = document.getElementById('product-search-input');
   const sortSelect = document.getElementById('sort-select');
 
@@ -563,8 +571,28 @@ function setupCategoryEvents() {
   if (searchInput) searchInput.addEventListener('input', updateList);
   if (sortSelect) sortSelect.addEventListener('change', updateList);
 
-  // 初次渲染
-  renderFilteredProducts();
+  if (isStatic) {
+    // 靜態 HTML 時，初始載入不重新渲染商品，以保留使用者在 HTML 內自訂的 src, alt, title 屬性
+    const grid = document.getElementById('category-products-grid');
+    if (grid) {
+      grid.querySelectorAll('.add-to-cart-quick').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          e.preventDefault();
+          const id = btn.dataset.id;
+          const product = productsData.find(p => p.id === id);
+          if (product) {
+            const size = product.sizes[0];
+            const color = product.colors[0];
+            addToCart(id, size, color, 1);
+          }
+        });
+      });
+    }
+  } else {
+    // 動態渲染
+    renderFilteredProducts();
+  }
 }
 
 function renderFilteredProducts() {
@@ -783,7 +811,7 @@ function renderCareGuideContent() {
 function getContactViewHTML() {
   return `
     <div class="page-view">
-      <section class="about-hero" style="height: 250px; background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('assets/images/陳如雪的鞋子商店-巔峰探索靴.png'); background-position: center bottom;" alt="陳如雪的鞋子商店-巔峰探索靴" title="陳如雪的鞋子商店-巔峰探索靴">
+      <section class="about-hero" style="height: 250px; background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('assets/images/men_hiking.png'); background-position: center bottom;" alt="聯絡我們" title="聯絡我們">
         <div class="hero-overlay"></div>
         <div class="hero-content">
           <h2 class="hero-title">聯絡我們 (Contact Us)</h2>

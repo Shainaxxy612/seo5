@@ -530,7 +530,7 @@ img {
 }
 
 .product-card:hover .product-img-holder img {
-  transform: scale(1.08) rotate(-2deg);
+  transform: scale(1.05);
 }
 
 .product-meta {
