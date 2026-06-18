@@ -90,7 +90,7 @@ function getFooterHTML() {
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 StrideElite (邁步精英) 品牌概念店. 版權所有.</p>
+      <p>&copy; 2026 StrideElite 陳如雪的鞋子商店. 版權所有.</p>
       <div class="footer-payments">
         <i class="fab fa-cc-visa" title="Visa"></i>
         <i class="fab fa-cc-mastercard" title="MasterCard"></i>

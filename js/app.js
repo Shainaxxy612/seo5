@@ -337,7 +337,7 @@ function getHomeViewHTML() {
         <div class="grid-categories">
           <div class="category-card" onclick="window.location.hash = '#mens'">
             <div class="category-img-wrapper">
-              <img src="assets/images/men_oxford.png" alt="男鞋系列">
+              <img src="assets/images/陳如雪的鞋子商店-經典紳士鞋.png" alt="陳如雪的鞋子商店-經典紳士鞋" title="陳如雪的鞋子商店-經典紳士鞋">
             </div>
             <div class="category-info">
               <h3>紳士男鞋系列</h3>
@@ -439,8 +439,8 @@ function getAboutViewHTML() {
       <section class="about-hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-          <h2 class="hero-title">StrideElite 品牌故事</h2>
-          <p class="hero-description">以極致手工藝，雕琢足尖上的尊榮藝術</p>
+          <h2 class="hero-title">陳如雪的鞋子專賣店</h2>
+          <p class="hero-description">尋找一雙【好穿的鞋子】嗎？我們身為在地口碑頂尖的【品牌】，致力於為大家研發最舒適的步伐。</p>
         </div>
       </section>
 
@@ -448,8 +448,8 @@ function getAboutViewHTML() {
         <div class="about-grid">
           <div class="about-text">
             <h3>工藝傳承，追求極致</h3>
-            <p>StrideElite 創立於 2018 年，總部位於台北。創辦人深感市場上多數鞋款在「時尚美學」與「舒適機能」之間難以兩全，因而結合了一群在鞋業耕耘數十年的手工鞋大師與現代人體工學材料學家，共同締造了 StrideElite 品牌。</p>
-            <p>我們深信，一雙好鞋不只承載著身體的重量，更指引著人生的前進方向。因此，從嚴選進口頂級小牛皮、精密研發抗菌防臭鞋墊，到最新氮氣中底防震技術的研發，每一個細節都凝聚著大師級的苛求與專注。</p>
+            <p>StrideElite 創立於 2018 年，總部位於台北。創辦人陳如雪深感市場上多數鞋款在「時尚美學」與「舒適機能」之間難以兩全。為了打破這個僵局，她結合了一群在鞋業耕耘數十年的手工鞋大師與現代人體工學材料學家，共同締造了 StrideElite 這個致力於打造【好穿的鞋子】的頂尖【品牌】。</p>
+            <p>在運動領域，StrideElite 導入最新氮氣防震技術，專為慢跑小白設計的【新手慢跑鞋】能帶來完美避震，極具【推薦】價值；而進階【慢跑鞋】更獲跑友神級【推薦】。奔馳球場的健兒也能在此找到高 CP 值的【平價】裝備，這款抗扭【籃球鞋】備受教練肯定的抓地力，讓這款【籃球鞋】被高度【推薦】。此外，不論是經典百搭的【黑色】科技【運動鞋】，還是講求極速穿脫的【無鞋帶】包覆【運動鞋】，均能滿足多元訓練。我們更打造專屬【健身訓練鞋】，給予【女】性最穩固的支撐力，而機能【運動鞋】也是我們極力【推薦】給所有熱愛運動【女】性的不二之選。</p>
           </div>
           <div class="about-image">
             <img src="assets/images/men_oxford.png" alt="手工製鞋工藝">
@@ -459,8 +459,8 @@ function getAboutViewHTML() {
         <div class="about-grid" style="direction: rtl;">
           <div class="about-text" style="direction: ltr;">
             <h3>綠色永續，步履不停</h3>
-            <p>我們在追求極致腳感的同時，亦高度關注地球的生態環境。StrideElite 致力於綠色製鞋計畫，在產品線中積極採用環保再生聚酯纖維、無毒食品級 PVC，以及獲得國際環保皮革認證 (LWG) 的永續小牛皮。</p>
-            <p>我們的鞋盒包裝全面採用 100% 可回收再生瓦楞紙與環保大豆油墨印刷，拒絕過度包裝，務求將碳足跡降到最低，讓您跨出的每一步，都是引領地球走向美好明天的綠色印記。</p>
+            <p>StrideElite 將環境責任融入職人防護，開啟綠色製鞋全新篇章。身為全台備受各大企業信賴的【安全鞋】永續【品牌】，我們的高防護規格深受各界【推薦】，歡迎親臨我們的【安全鞋】旗艦【專賣店】選購。店內主打通過嚴格檢驗的【鋼頭安全鞋】，結合獨家研發的再生防滑大底，這款高規格【防滑】設計的綠色【工作鞋】能全方位守護勞工安全，同時也是公認最【適合久站的鞋子】。因應極端氣候，我們採用可回收塑料研發出強效【防水】科技的【防滑鞋】，無懼暴雨；而兼具減碳概念與都會美學的環保【防水鞋】，在重視永續的年輕族群中大受好評與【推薦】。</p>
+            <p>在步履不停的路上，我們悉心守護全家人的足部健康，更愛護這片土地。針對喜愛探險的朋友，我們以環境友善材質打造機能【水陸兩用鞋】，在戶外圈極受【推薦】。為了解決通勤族的疲勞，環保減壓的【久站鞋】深受上班族【推薦】，是各行各業的必備好物；若您的腳步深受足疾困擾，專為【足底筋膜炎】打造的舒壓【專用鞋款】則能重塑舒適步伐。針對下一代，我們成立了【兒童】永續運動專區，是家長採購【足球鞋】首選的【專賣店】；週末出遊則有全回收料件的【兒童】【洞洞鞋】相伴。面對最讓人頭痛的【白鞋變黃】問題，我們建議在全新【鞋子】落地前，噴上對自然無害的【防水】防污【噴霧】，這招深受鞋友【推薦】，更是延長鞋履壽命、實踐永續生活的不二法門。</p>
           </div>
           <div class="about-image">
             <img src="assets/images/logo.png" alt="綠色環保材料">
@@ -470,18 +470,18 @@ function getAboutViewHTML() {
         <div class="values-row">
           <div class="value-card glass-panel">
             <i class="fas fa-gem"></i>
-            <h4>非凡品質</h4>
-            <p>堅持 120 道製鞋工藝流程，層層檢驗把關，力求為您呈現最完美的品質。</p>
+            <h4>非凡品質 —— 締造【好穿的鞋子】頂尖【品牌】</h4>
+            <p>傳承數十年手工大師的極致苛求，StrideElite 致力於研發出真正【好穿的鞋子】指標【品牌】。我們嚴選進口頂級小牛皮，以一針一線的匠心工藝，雕琢出如藝術品般的非凡鞋履，完美體現創辦人陳如雪對都會美學與品質的極致追求。</p>
           </div>
           <div class="value-card glass-panel">
             <i class="fas fa-heartbeat"></i>
-            <h4>健康機能</h4>
-            <p>人體工學 3D 足弓支撐與醫學級避震技術，全天候守護您雙足的關節健康。</p>
+            <h4>健康機能 —— 舒緩足部壓力的【久站鞋】強力【推薦】</h4>
+            <p>結合人體工學與材料學，這款專為職人減壓打造的【久站鞋】，在舒適度與機能性上獲得各界高度【推薦】。我們精密研發抗菌防臭鞋墊，並導入氮氣中底防震技術，全面承載身體重量、吸收雙腳衝擊，為您的每一步帶來無與倫比的健康機能體驗。</p>
           </div>
           <div class="value-card glass-panel">
             <i class="fas fa-seedling"></i>
-            <h4>環境友善</h4>
-            <p>承諾使用可循環再生永續材料，共同維護我們的藍色家園。</p>
+            <h4>環境友善 —— 搭配【鞋子】【防水】【噴霧】的環保【推薦】</h4>
+            <p>守護地球，步履不停。我們選用低碳製程，更建議在全新【鞋子】落地前，搭配對自然無害的護鞋【防水】防污【噴霧】，這項永續保養對策深受專業達人【推薦】。讓我們減少碳足跡，邁出的每一步都成為對大自然最溫柔的環境友善承諾。</p>
           </div>
         </div>
       </section>
@@ -765,7 +765,7 @@ function renderCareGuideContent() {
 function getContactViewHTML() {
   return `
     <div class="page-view">
-      <section class="about-hero" style="height: 250px; background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('assets/images/men_hiking.png'); background-position: center bottom;">
+      <section class="about-hero" style="height: 250px; background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('assets/images/陳如雪的鞋子商店-巔峰探索靴.png'); background-position: center bottom;" alt="陳如雪的鞋子商店-巔峰探索靴" title="陳如雪的鞋子商店-巔峰探索靴">
         <div class="hero-overlay"></div>
         <div class="hero-content">
           <h2 class="hero-title">聯絡我們 (Contact Us)</h2>
