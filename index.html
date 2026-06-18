@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-Hant-TW">
 <head>
   <meta charset="UTF-8">
@@ -15,10 +15,10 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="StrideElite 邁步精英 | 尊榮頂級鞋類品牌概念店">
   <meta property="og:description" content="融合經典手工工藝與現代材料科技，為您提供無與倫比的舒適與優雅。全館滿 NT$ 1500 免運，享 7 天尺寸免費退換貨。">
-  <meta property="og:image" content="assets/images/logo.png">
+  <meta property="og:image" content="assets/images/陳如雪的鞋子商店-Logo.png">
   
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="icon" type="image/png" href="assets/images/陳如雪的鞋子商店-Logo.png">
   
   <!-- Stylesheets -->
   <!-- FontAwesome Icons -->
@@ -35,10 +35,219 @@
 
   <!-- Main View Container (Dynamic Content) -->
   <main class="main-content" id="main-content">
-    <!-- Loaded Dynamically via Router (Home, About, Mens, Womens, Kids, Care, Accessories, Contact, Detail) -->
-    <div style="padding: 100px; text-align: center;">
-      <i class="fas fa-spinner fa-spin" style="font-size: 3rem; color: var(--primary-gold); margin-bottom: 20px;"></i>
-      <h2>載入 StrideElite 精品商城中...</h2>
+    <div class="page-view">
+      <!-- 英雄海報 Banner -->
+      <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="hero-subtitle">StrideElite 精英首選</p>
+          <h2 class="hero-title">邁步出眾，舒適相伴每一英里</h2>
+          <p class="hero-description">融合現代美學設計與極致舒適的機能工藝，StrideElite 為追求極致品味的您打造每一雙無可挑剔的完美鞋履。</p>
+          <div class="hero-buttons">
+            <a href="mens.html" class="btn btn-primary">選購男鞋</a>
+            <a href="womens.html" class="btn btn-primary">選購女鞋</a>
+            <a href="about.html" class="btn btn-secondary">品牌故事</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 分類精選快捷卡片 -->
+      <section class="category-showcase">
+        <div class="section-header">
+          <h2 class="section-title">探索精選類別</h2>
+          <p class="section-subtitle">為您的日常生活、工作及戶外運動，尋找最合適的專屬配置</p>
+        </div>
+        <div class="grid-categories">
+          <div class="category-card" onclick="window.location.href = 'mens.html'">
+            <div class="category-img-wrapper">
+              <img src="assets/images/陳如雪的鞋子商店-英倫經典典藏雕花皮鞋.png" alt="紳士男鞋系列" title="紳士男鞋系列">
+            </div>
+            <div class="category-info">
+              <h3>紳士男鞋系列</h3>
+              <p>商務皮鞋、越野登山、高能跑鞋</p>
+            </div>
+          </div>
+          <div class="category-card" onclick="window.location.href = 'womens.html'">
+            <div class="category-img-wrapper">
+              <img src="assets/images/陳如雪的鞋子商店-魅影紅伶時尚尖頭高跟鞋.png" alt="女鞋系列" title="優雅女鞋系列">
+            </div>
+            <div class="category-info">
+              <h3>優雅女鞋系列</h3>
+              <p>氣質高跟、休閒樂福、飛織跑鞋</p>
+            </div>
+          </div>
+          <div class="category-card" onclick="window.location.href = 'kids.html'">
+            <div class="category-img-wrapper">
+              <img src="assets/images/陳如雪的鞋子商店-彩虹旋風超輕量兒童運動鞋.png" alt="童鞋系列" title="繽紛童鞋系列">
+            </div>
+            <div class="category-info">
+              <h3>繽紛童鞋系列</h3>
+              <p>輕量跑鞋、雨天防水、學院防滑</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 明星熱銷單品 -->
+      <section class="featured-products">
+        <div class="section-header">
+          <h2 class="section-title">熱門推薦單品</h2>
+          <p class="section-subtitle">精選品牌最受歡迎與好評的指標性商品</p>
+        </div>
+        <div class="products-grid">
+          <!-- 商品卡片 1：極光跑鞋 -->
+          <div class="product-card glass-panel" data-id="陳如雪的鞋子商店-極光炫能專業跑鞋">
+            <span class="badge-tag">優惠中</span>
+            <div class="product-img-holder">
+              <a href="product.html?id=陳如雪的鞋子商店-極光炫能專業跑鞋">
+                <img src="assets/images/陳如雪的鞋子商店-極光炫能專業跑鞋.png" alt="陳如雪的鞋子商店-極光炫能專業跑鞋" title="陳如雪的鞋子商店-極光炫能專業跑鞋" loading="lazy">
+              </a>
+            </div>
+            <div class="product-meta">
+              <div class="product-meta-header">
+                <span class="product-cat">男鞋系列</span>
+                <span class="product-rating">
+                  <i class="fas fa-star"></i> 4.9
+                </span>
+              </div>
+              <h3 class="product-card-title">
+                <a href="product.html?id=陳如雪的鞋子商店-極光炫能專業跑鞋">極光炫能專業跑鞋 (Aurora Speed Runner)</a>
+              </h3>
+              <div class="product-card-bottom">
+                <div class="price-box">
+                  <span class="price-original">NT$ 4200</span>
+                  <span class="price-current">3680</span>
+                </div>
+                <button class="add-cart-btn add-to-cart-quick" data-id="陳如雪的鞋子商店-極光炫能專業跑鞋" title="加入購物車">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 商品卡片 2：優雅高跟鞋 -->
+          <div class="product-card glass-panel" data-id="陳如雪的鞋子商店-魅影紅伶時尚尖頭高跟鞋">
+            <span class="badge-tag">優惠中</span>
+            <div class="product-img-holder">
+              <a href="product.html?id=陳如雪的鞋子商店-魅影紅伶時尚尖頭高跟鞋">
+                <img src="assets/images/陳如雪的鞋子商店-魅影紅伶時尚尖頭高跟鞋.png" alt="陳如雪的鞋子商店-魅影紅伶時尚尖頭高跟鞋" title="陳如雪的鞋子商店-魅影紅伶時尚尖頭高跟鞋" loading="lazy">
+              </a>
+            </div>
+            <div class="product-meta">
+              <div class="product-meta-header">
+                <span class="product-cat">女鞋系列</span>
+                <span class="product-rating">
+                  <i class="fas fa-star"></i> 4.8
+                </span>
+              </div>
+              <h3 class="product-card-title">
+                <a href="product.html?id=陳如雪的鞋子商店-魅影紅伶時尚尖頭高跟鞋">魅影紅伶時尚尖頭高跟鞋 (Scarlet Elegance Heels)</a>
+              </h3>
+              <div class="product-card-bottom">
+                <div class="price-box">
+                  <span class="price-original">NT$ 4600</span>
+                  <span class="price-current">3880</span>
+                </div>
+                <button class="add-cart-btn add-to-cart-quick" data-id="陳如雪的鞋子商店-魅影紅伶時尚尖頭高跟鞋" title="加入購物車">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 商品卡片 3：彩虹童鞋 -->
+          <div class="product-card glass-panel" data-id="陳如雪的鞋子商店-彩虹旋風超輕量兒童運動鞋">
+            <span class="badge-tag">優惠中</span>
+            <div class="product-img-holder">
+              <a href="product.html?id=陳如雪的鞋子商店-彩虹旋風超輕量兒童運動鞋">
+                <img src="assets/images/陳如雪的鞋子商店-彩虹旋風超輕量兒童運動鞋.png" alt="陳如雪的鞋子商店-彩虹旋風超輕量兒童運動鞋" title="陳如雪的鞋子商店-彩虹旋風超輕量兒童運動鞋" loading="lazy">
+              </a>
+            </div>
+            <div class="product-meta">
+              <div class="product-meta-header">
+                <span class="product-cat">童鞋系列</span>
+                <span class="product-rating">
+                  <i class="fas fa-star"></i> 4.8
+                </span>
+              </div>
+              <h3 class="product-card-title">
+                <a href="product.html?id=陳如雪的鞋子商店-彩虹旋風超輕量兒童運動鞋">彩虹旋風超輕量兒童運動鞋 (Rainbow Wind Kids Sneaker)</a>
+              </h3>
+              <div class="product-card-bottom">
+                <div class="price-box">
+                  <span class="price-original">NT$ 2200</span>
+                  <span class="price-current">1880</span>
+                </div>
+                <button class="add-cart-btn add-to-cart-quick" data-id="陳如雪的鞋子商店-彩虹旋風超輕量兒童運動鞋" title="加入購物車">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 商品卡片 4：奈米防水噴霧 -->
+          <div class="product-card glass-panel" data-id="陳如雪的鞋子商店-御盾奈米超感防水防污噴霧">
+            <span class="badge-tag">優惠中</span>
+            <div class="product-img-holder">
+              <a href="product.html?id=陳如雪的鞋子商店-御盾奈米超感防水防污噴霧">
+                <img src="assets/images/陳如雪的鞋子商店-御盾奈米超感防水防污噴霧.png" alt="陳如雪的鞋子商店-御盾奈米超感防水防污噴霧" title="陳如雪的鞋子商店-御盾奈米超感防水防污噴霧" loading="lazy">
+              </a>
+            </div>
+            <div class="product-meta">
+              <div class="product-meta-header">
+                <span class="product-cat">鞋類維護</span>
+                <span class="product-rating">
+                  <i class="fas fa-star"></i> 4.9
+                </span>
+              </div>
+              <h3 class="product-card-title">
+                <a href="product.html?id=陳如雪的鞋子商店-御盾奈米超感防水防污噴霧">御盾奈米超感防水防污噴霧 (Nano Shield Waterproof Spray)</a>
+              </h3>
+              <div class="product-card-bottom">
+                <div class="price-box">
+                  <span class="price-original">NT$ 600</span>
+                  <span class="price-current">490</span>
+                </div>
+                <button class="add-cart-btn add-to-cart-quick" data-id="陳如雪的鞋子商店-御盾奈米超感防水防污噴霧" title="加入購物車">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 品牌核心價值與特色 -->
+      <section class="brand-benefits">
+        <div class="benefit-item">
+          <div class="benefit-icon"><i class="fas fa-shipping-fast"></i></div>
+          <div class="benefit-text">
+            <h4>免運費服務</h4>
+            <p>全館消費滿 NT$ 1,500 即享黑貓免運配送</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon"><i class="fas fa-undo"></i></div>
+          <div class="benefit-text">
+            <h4>7天無憂退換貨</h4>
+            <p>提供安心試穿尺寸不合免費更換</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon"><i class="fas fa-shield-alt"></i></div>
+          <div class="benefit-text">
+            <h4>100% 正品保障</h4>
+            <p>原廠直營品質把關，附尊榮包裝</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon"><i class="fas fa-hand-holding-heart"></i></div>
+          <div class="benefit-text">
+            <h4>專業鞋類維修</h4>
+            <p>購買即可享受原廠專業諮詢與保養</p>
+          </div>
+        </div>
+      </section>
     </div>
   </main>
 

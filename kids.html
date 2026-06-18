@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-Hant-TW">
 <head>
   <meta charset="UTF-8">
@@ -11,7 +11,7 @@
   <meta name="author" content="StrideElite Co.">
   
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="icon" type="image/png" href="assets/images/陳如雪的鞋子商店-Logo.png">
   
   <!-- Stylesheets -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -24,9 +24,121 @@
 
   <!-- Main View Container -->
   <main class="main-content" id="main-content">
-    <div style="padding: 100px; text-align: center;">
-      <i class="fas fa-spinner fa-spin" style="font-size: 3rem; color: var(--primary-gold); margin-bottom: 20px;"></i>
-      <h2>載入童鞋系列商品中...</h2>
+    <div class="page-view" style="max-width: 1400px; margin: 40px auto; padding: 0 30px;">
+      <div class="section-header" style="text-align: left; margin-bottom: 30px;">
+        <h2 class="section-title" style="display: block; margin-bottom: 10px;">童鞋系列 (Kids' Collection)</h2>
+        <p class="section-subtitle" id="product-count-subtitle">為您找到 3 項精選商品</p>
+      </div>
+
+      <!-- 商品過濾與搜索欄 -->
+      <section class="filter-bar glass-panel">
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input type="text" id="product-search-input" placeholder="搜尋商品名稱或特點..." value="">
+        </div>
+        <div class="filter-options">
+          <label for="sort-select" style="font-weight: 600; font-size: 0.9rem;">排序：</label>
+          <select id="sort-select" class="filter-select">
+            <option value="default" selected>預設推薦</option>
+            <option value="price-asc">價格：由低到高</option>
+            <option value="price-desc">價格：由高到低</option>
+            <option value="rating">顧客評價最高</option>
+          </select>
+        </div>
+      </section>
+
+      <!-- 商品渲染列表 -->
+      <div class="products-grid" id="category-products-grid">
+        <!-- 商品卡片 1：彩虹旋風超輕量兒童運動鞋 -->
+        <div class="product-card glass-panel" data-id="陳如雪的鞋子商店-彩虹旋風超輕量兒童運動鞋">
+          <span class="badge-tag">優惠中</span>
+          <div class="product-img-holder">
+            <a href="product.html?id=陳如雪的鞋子商店-彩虹旋風超輕量兒童運動鞋">
+              <img src="assets/images/陳如雪的鞋子商店-彩虹旋風超輕量兒童運動鞋.png" alt="陳如雪的鞋子商店-彩虹旋風超輕量兒童運動鞋" title="陳如雪的鞋子商店-彩虹旋風超輕量兒童運動鞋" loading="lazy">
+            </a>
+          </div>
+          <div class="product-meta">
+            <div class="product-meta-header">
+              <span class="product-cat">童鞋系列</span>
+              <span class="product-rating">
+                <i class="fas fa-star"></i> 4.8
+              </span>
+            </div>
+            <h3 class="product-card-title">
+              <a href="product.html?id=陳如雪的鞋子商店-彩虹旋風超輕量兒童運動鞋">彩虹旋風超輕量兒童運動鞋 (Rainbow Wind Kids Sneaker)</a>
+            </h3>
+            <div class="product-card-bottom">
+              <div class="price-box">
+                <span class="price-original">NT$ 2200</span>
+                <span class="price-current">1880</span>
+              </div>
+              <button class="add-cart-btn add-to-cart-quick" data-id="陳如雪的鞋子商店-彩虹旋風超輕量兒童運動鞋" title="加入購物車">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 商品卡片 2：歡樂小鴨防水防滑兒童雨鞋 -->
+        <div class="product-card glass-panel" data-id="陳如雪的鞋子商店-歡樂小鴨防水防滑兒童雨鞋">
+          <span class="badge-tag">優惠中</span>
+          <div class="product-img-holder">
+            <a href="product.html?id=陳如雪的鞋子商店-歡樂小鴨防水防滑兒童雨鞋">
+              <img src="assets/images/陳如雪的鞋子商店-歡樂小鴨防水防滑兒童雨鞋.png" alt="陳如雪的鞋子商店-歡樂小鴨防水防滑兒童雨鞋" title="陳如雪的鞋子商店-歡樂小鴨防水防滑兒童雨鞋" loading="lazy">
+            </a>
+          </div>
+          <div class="product-meta">
+            <div class="product-meta-header">
+              <span class="product-cat">童鞋系列</span>
+              <span class="product-rating">
+                <i class="fas fa-star"></i> 4.9
+              </span>
+            </div>
+            <h3 class="product-card-title">
+              <a href="product.html?id=陳如雪的鞋子商店-歡樂小鴨防水防滑兒童雨鞋">歡樂小鴨防水防滑兒童雨鞋 (Happy Duck Rainboots)</a>
+            </h3>
+            <div class="product-card-bottom">
+              <div class="price-box">
+                <span class="price-original">NT$ 1600</span>
+                <span class="price-current">1280</span>
+              </div>
+              <button class="add-cart-btn add-to-cart-quick" data-id="陳如雪的鞋子商店-歡樂小鴨防水防滑兒童雨鞋" title="加入購物車">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 商品卡片 3：探索學院復古魔鬼氈兒童鞋 -->
+        <div class="product-card glass-panel" data-id="陳如雪的鞋子商店-探索學院復古魔鬼氈兒童鞋">
+          <span class="badge-tag">優惠中</span>
+          <div class="product-img-holder">
+            <a href="product.html?id=陳如雪的鞋子商店-探索學院復古魔鬼氈兒童鞋">
+              <img src="assets/images/陳如雪的鞋子商店-探索學院復古魔鬼氈兒童鞋.png" alt="陳如雪的鞋子商店-探索學院復古魔鬼氈兒童鞋" title="陳如雪的鞋子商店-探索學院復古魔鬼氈兒童鞋" loading="lazy">
+            </a>
+          </div>
+          <div class="product-meta">
+            <div class="product-meta-header">
+              <span class="product-cat">童鞋系列</span>
+              <span class="product-rating">
+                <i class="fas fa-star"></i> 4.6
+              </span>
+            </div>
+            <h3 class="product-card-title">
+              <a href="product.html?id=陳如雪的鞋子商店-探索學院復古魔鬼氈兒童鞋">探索學院復古魔鬼氈兒童鞋 (Retro Academy Velcro Sneaker)</a>
+            </h3>
+            <div class="product-card-bottom">
+              <div class="price-box">
+                <span class="price-original">NT$ 1980</span>
+                <span class="price-current">1680</span>
+              </div>
+              <button class="add-cart-btn add-to-cart-quick" data-id="陳如雪的鞋子商店-探索學院復古魔鬼氈兒童鞋" title="加入購物車">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 

@@ -1,13 +1,13 @@
-// StrideElite 鞋類品牌網站產品資料庫
+﻿// StrideElite 鞋類品牌網站產品資料庫
 const productsData = [
   // --- 男鞋系列 (Men's Shoes) ---
   {
-    id: "men-runner",
+    id: "陳如雪的鞋子商店-極光炫能專業跑鞋",
     name: "極光炫能專業跑鞋 (Aurora Speed Runner)",
     category: "mens",
     price: 3680,
     originalPrice: 4200,
-    image: "assets/images/men_runner.png", alt: "極光炫能專業跑鞋 (Aurora Speed Runner)", title: "極光炫能專業跑鞋 (Aurora Speed Runner)",
+    image: "assets/images/陳如雪的鞋子商店-極光炫能專業跑鞋.png", alt: "極光炫能專業跑鞋 (Aurora Speed Runner)", title: "極光炫能專業跑鞋 (Aurora Speed Runner)",
     description: "StrideElite 旗艦級運動跑鞋。採用極光橘與暗黑的科技編織網眼鞋面，融合最新一波 AirFlow 透氣科技與高彈力氮氣避震中底。不論是日常慢跑還是馬拉松競速，都能為您提供強勁的推進力與完美的腳感回饋。",
     features: [
       "極光霓虹與酷黑雙色立體編織鞋面，吸睛且極具科技感",
@@ -24,12 +24,12 @@ const productsData = [
     ]
   },
   {
-    id: "men-oxford",
+    id: "陳如雪的鞋子商店-英倫經典典藏雕花皮鞋",
     name: "英倫經典典藏雕花皮鞋 (Classic Oxford Brogue)",
     category: "mens",
     price: 4580,
     originalPrice: 5200,
-    image: "assets/images/men_oxford.png",
+    image: "assets/images/陳如雪的鞋子商店-英倫經典典藏雕花皮鞋.png",
     description: "傳承英式傳統工藝的雕花牛津鞋。選用上乘全粒面牛皮手工擦色，呈現深邃典雅的漸層光澤。極致貼合腳型的固特異沿條結構與吸震真皮鞋墊，將時尚風範與極致舒適完美融合，是紳士出席正式場合的首選。",
     features: [
       "精選頂級義大利全粒面小牛皮，觸感細膩，光澤自然",
@@ -46,12 +46,12 @@ const productsData = [
     ]
   },
   {
-    id: "men-hiking",
+    id: "陳如雪的鞋子商店-巔峰行者全地形防水登山靴",
     name: "巔峰行者全地形防水登山靴 (Summit Waterproof Boots)",
     category: "mens",
     price: 4980,
     originalPrice: 5800,
-    image: "assets/images/men_hiking.png",
+    image: "assets/images/陳如雪的鞋子商店-巔峰行者全地形防水登山靴.png",
     description: "專為挑戰極限設計的全地形登山靴。採用高耐磨防潑水皮革結合 GORE-SHIELD 奈米防水薄膜，確保足部絕對乾爽。大底使用防滑橡膠複合抓地齒，不論濕滑泥地、岩石絕壁還是雪地，皆能如履平地。",
     features: [
       "三層防水透氣結構，阻擋雨水侵入的同時迅速排出足部濕氣",
@@ -70,12 +70,12 @@ const productsData = [
 
   // --- 女鞋系列 (Women's Shoes) ---
   {
-    id: "women-heels",
+    id: "陳如雪的鞋子商店-魅影紅伶時尚尖頭高跟鞋",
     name: "魅影紅伶時尚尖頭高跟鞋 (Scarlet Elegance Heels)",
     category: "womens",
     price: 3880,
     originalPrice: 4600,
-    image: "assets/images/women_heels.png",
+    image: "assets/images/陳如雪的鞋子商店-魅影紅伶時尚尖頭高跟鞋.png",
     description: "優雅極致的代表作。精緻的漸層魅影紅細絨面，搭配經典性感尖頭設計與 8cm 黃金比例細高跟，修飾身形曲線。獨特的足弓減壓承托墊設計，打破傳統高跟鞋久穿腳痛的痛點，讓您在各個重要場合散發自信魅力。",
     features: [
       "奢華進口綿羊反絨皮革面料，色彩飽滿，質感高級",
@@ -92,12 +92,12 @@ const productsData = [
     ]
   },
   {
-    id: "women-sneaker",
+    id: "陳如雪的鞋子商店-微風粉霧透氣針織慢跑鞋",
     name: "微風粉霧透氣針織慢跑鞋 (Breeze Knit Sneaker)",
     category: "womens",
     price: 2980,
     originalPrice: 3500,
-    image: "assets/images/women_sneaker.png",
+    image: "assets/images/陳如雪的鞋子商店-微風粉霧透氣針織慢跑鞋.png",
     description: "像微風般輕盈無感的生活慢跑鞋。採用粉霧粉紅高彈力 3D 一體飛織科技，完美包覆腳型。雲感超軟中底配合排汗抗菌鞋墊，提供極致溫柔的踩踏腳感。不論是運動健身還是逛街通勤，都是女性的最佳夥伴。",
     features: [
       "3D 一體成型彈力飛織網眼，輕盈透氣如穿襪子般舒適貼合",
@@ -114,12 +114,12 @@ const productsData = [
     ]
   },
   {
-    id: "women-loafer",
+    id: "陳如雪的鞋子商店-優雅晨光麂皮舒適樂福鞋",
     name: "優雅晨光麂皮舒適樂福鞋 (Morning Suede Loafers)",
     category: "womens",
     price: 3280,
     originalPrice: 3800,
-    image: "assets/images/women_loafer.png",
+    image: "assets/images/陳如雪的鞋子商店-優雅晨光麂皮舒適樂福鞋.png",
     description: "散發休閒法式優雅的經典樂福鞋。精選柔軟細緻的反絨麂皮，配以莫卡辛手工縫線與簡約的金屬扣飾，流露低調奢華。極柔軟的一體式橡膠底與可折疊後跟設計，一鞋兩穿，既是優雅樂福鞋也是隨性穆勒鞋。",
     features: [
       "特級防潑水反絨麂皮，質地溫潤，耐髒易打理",
@@ -138,12 +138,12 @@ const productsData = [
 
   // --- 童鞋系列 (Kids' Shoes) ---
   {
-    id: "kids-runner",
+    id: "陳如雪的鞋子商店-彩虹旋風超輕量兒童運動鞋",
     name: "彩虹旋風超輕量兒童運動鞋 (Rainbow Wind Kids Sneaker)",
     category: "kids",
     price: 1880,
     originalPrice: 2200,
-    image: "assets/images/kids_runner.png",
+    image: "assets/images/陳如雪的鞋子商店-彩虹旋風超輕量兒童運動鞋.png",
     description: "專為學齡兒童設計的超輕量運動鞋。採用繽紛活潑的炫彩拼色，激發孩子探索世界的熱情。寬楦設計符合亞洲兒童發育期腳型，魔鬼氈與高彈力拉帶讓穿脫變的非常簡單。高抓地力防滑鞋底，保護孩子每一次奔跑。",
     features: [
       "超輕量無負擔結構，單隻僅重約 120g，釋放孩子好動天性",
@@ -160,12 +160,12 @@ const productsData = [
     ]
   },
   {
-    id: "kids-rainboots",
+    id: "陳如雪的鞋子商店-歡樂小鴨防水防滑兒童雨鞋",
     name: "歡樂小鴨防水防滑兒童雨鞋 (Happy Duck Rainboots)",
     category: "kids",
     price: 1280,
     originalPrice: 1600,
-    image: "assets/images/kids_rainboots.png",
+    image: "assets/images/陳如雪的鞋子商店-歡樂小鴨防水防滑兒童雨鞋.png",
     description: "下雨天踩水坑的最佳玩伴！亮黃色經典俏皮小鴨雨鞋，採用環保食品級無毒 PVC 材質，一體成型絕對防水。鞋內備有親膚吸汗純棉內裡，搭配後跟反光安全條，確保陰雨天與夜間的行走安全，讓雨天也充滿歡笑。",
     features: [
       "100% 食品級環保 PVC 材質，無異味、無塑化劑，呵護寶貝肌膚",
@@ -182,12 +182,12 @@ const productsData = [
     ]
   },
   {
-    id: "kids-velcro",
+    id: "陳如雪的鞋子商店-探索學院復古魔鬼氈兒童鞋",
     name: "探索學院復古魔鬼氈兒童鞋 (Retro Academy Velcro Sneaker)",
     category: "kids",
     price: 1680,
     originalPrice: 1980,
-    image: "assets/images/kids_velcro.png",
+    image: "assets/images/陳如雪的鞋子商店-探索學院復古魔鬼氈兒童鞋.png",
     description: "融合復古運動風與現代機能的學院風板鞋。高級耐磨超纖皮革鞋面，耐髒且極易擦拭整理。雙魔鬼氈快開設計，配合加固後跟杯，能牢牢鎖定孩子足跟，有效防止走路內八或外八，是孩子上學與日常休閒的絕佳鞋款。",
     features: [
       "優質超纖耐磨皮革，不易起皮破損，髒污用濕布擦拭即可乾淨",
@@ -206,12 +206,12 @@ const productsData = [
 
   // --- 鞋類維護系列 (Shoe Care) ---
   {
-    id: "care-waterproof",
+    id: "陳如雪的鞋子商店-御盾奈米超感防水防污噴霧",
     name: "御盾奈米超感防水防污噴霧 (Nano Shield Waterproof Spray)",
     category: "care",
     price: 490,
     originalPrice: 600,
-    image: "assets/images/care_waterproof.png",
+    image: "assets/images/陳如雪的鞋子商店-御盾奈米超感防水防污噴霧.png",
     description: "StrideElite 實驗室研發的頂級防水護理劑。採用最新奈米級氟素撥水技術，噴灑後在鞋子表面形成一層肉眼不可見的隱形防護網。強效阻絕水珠、污漬、醬油及沙拉油的侵入，同時 100% 保持鞋子原本的透氣性。",
     features: [
       "奈米級強效撥水、防污、防油，有效維持長達 30-45 天的防護",
@@ -228,12 +228,12 @@ const productsData = [
     ]
   },
   {
-    id: "care-cream",
+    id: "陳如雪的鞋子商店-煥彩蜂蠟天然皮革滋養霜",
     name: "煥彩蜂蠟天然皮革滋養霜 (Premium Natural Leather Cream)",
     category: "care",
     price: 390,
     originalPrice: 480,
-    image: "assets/images/care_cream.png",
+    image: "assets/images/陳如雪的鞋子商店-煥彩蜂蠟天然皮革滋養霜.png",
     description: "純天然成分調配的奢華皮革護理膏。以頂級天然蜂蠟、巴西棕櫚蠟與有機荷荷巴油為基底，深入皮革纖維進行深層滋養，防止皮革乾裂褪色，恢復亮麗的自然皮革光澤。適用於牛皮、羊皮等光滑皮革製品。",
     features: [
       "100% 天然溫和配方，不含化學溶劑，不傷皮革不傷手",
@@ -250,12 +250,12 @@ const productsData = [
     ]
   },
   {
-    id: "care-brush",
+    id: "陳如雪的鞋子商店-大師級雙面極致清潔馬毛刷",
     name: "大師級雙面極致清潔馬毛刷 (Master Dual-Sided Shoe Brush)",
     category: "care",
     price: 350,
     originalPrice: 450,
-    image: "assets/images/care_brush.png",
+    image: "assets/images/陳如雪的鞋子商店-大師級雙面極致清潔馬毛刷.png",
     description: "清潔與拋光二合一的大師級鞋刷。選用進口柔軟天然馬毛與強韌豬鬃毛雙面設計：馬毛面柔軟綿密，適合清潔麂皮、飛織及高級皮革上的浮塵；豬鬃面強韌有彈力，適合刷洗鞋底頑固泥沙，木柄選用人體工學山毛櫸，握感極佳。",
     features: [
       "雙面不同軟硬度毛刷設計，一支滿足除塵、刷洗與拋光三大需求",
@@ -274,12 +274,12 @@ const productsData = [
 
   // --- 配件系列 (Accessories) ---
   {
-    id: "acc-insoles",
+    id: "陳如雪的鞋子商店-步態平衡人體工學減壓鞋墊",
     name: "步態平衡人體工學減壓鞋墊 (Bio-Balance Arch Insoles)",
     category: "accessories",
     price: 580,
     originalPrice: 750,
-    image: "assets/images/acc_insoles.png",
+    image: "assets/images/陳如雪的鞋子商店-步態平衡人體工學減壓鞋墊.png",
     description: "專為矯正步態與緩解足底壓力研發的機能鞋墊。採用高密度記憶泡棉與立體足弓 3D 支撐片，將足底重力均勻分散，減少足底筋膜拉扯。後跟內嵌 Poron 緩震果凍膠墊，吸收行走與跑步時 90% 的衝擊力，重塑行走舒適度。",
     features: [
       "人體工學 3D 足弓支撐片，穩定足踝，改善扁平足/高足弓引起的不適",
@@ -296,12 +296,12 @@ const productsData = [
     ]
   },
   {
-    id: "acc-shoelaces",
+    id: "陳如雪的鞋子商店-引力免繫時尚反光彈力鞋帶",
     name: "引力免繫時尚反光彈力鞋帶 (Gravity Tie-Free Laces)",
     category: "accessories",
     price: 220,
     originalPrice: 300,
-    image: "assets/images/acc_shoelaces.png",
+    image: "assets/images/陳如雪的鞋子商店-引力免繫時尚反光彈力鞋帶.png",
     description: "徹底解放雙手的免繫彈力鞋帶。選用高彈力馬來西亞天然橡膠內芯，外層編織高亮 3M 反光絲，安全且具時尚感。搭配堅固的按壓式合金金屬膠囊鎖扣，一次調整，終身免繫，運動時絕不鬆脫，是跑者與兒童的最佳幫手。",
     features: [
       "高彈性拉伸結構，壓力均勻分布，腳背無壓迫感，運動更舒適",
@@ -318,12 +318,12 @@ const productsData = [
     ]
   },
   {
-    id: "acc-shoehorn",
+    id: "陳如雪的鞋子商店-尊榮典藏手工藝長柄山毛櫸鞋拔",
     name: "尊榮典藏手工藝長柄山毛櫸鞋拔 (Noble Beech Wood Shoehorn)",
     category: "accessories",
     price: 450,
     originalPrice: 600,
-    image: "assets/images/acc_shoehorn.png",
+    image: "assets/images/陳如雪的鞋子商店-尊榮典藏手工藝長柄山毛櫸鞋拔.png",
     description: "展現優雅生活細節的手工木雕鞋拔。精選一整塊德國進口山毛櫸木，經數十道打磨工序精雕細琢而成。符合人體工學的流暢彎曲弧度，極致貼合腳後跟。尾端搭配高級植鞣皮革掛繩與黃銅掛環，不只是實用工具，更是玄關的藝術品。",
     features: [
       "精選天然德國山毛櫸，木紋細膩雅緻，手感溫潤如玉，長度達 55 公分",

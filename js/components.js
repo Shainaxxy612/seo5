@@ -24,7 +24,7 @@ function getHeaderHTML(activePage, cartItemCount = 0) {
   return `
     <div class="header-container">
       <a href="index.html" class="logo-link">
-        <img src="assets/images/logo.png" alt="StrideElite Logo" class="logo-img">
+        <img src="assets/images/陳如雪的鞋子商店-Logo.png" alt="StrideElite Logo" class="logo-img">
         <span class="logo-text">StrideElite</span>
       </a>
       <nav>

@@ -262,7 +262,7 @@ img {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('../assets/images/men_runner.png') no-repeat center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('../assets/images/陳如雪的鞋子商店-極光炫能專業跑鞋.png') no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
   color: #ffffff;
@@ -522,6 +522,14 @@ img {
   background-color: rgba(255, 255, 255, 0.02);
 }
 
+.product-img-holder a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
 .product-img-holder img {
   max-height: 85%;
   max-width: 85%;
@@ -740,7 +748,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('../assets/images/logo.png') no-repeat center center;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('../assets/images/陳如雪的鞋子商店-Logo.png') no-repeat center center;
   background-size: contain;
   background-color: #141412;
   color: #ffffff;

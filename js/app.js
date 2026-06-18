@@ -1,4 +1,4 @@
-// StrideElite 鞋類品牌網站核心邏輯 (App Main Logic)
+﻿// StrideElite 鞋類品牌網站核心邏輯 (App Main Logic)
 
 // --- 全局狀態管理 (Global State) ---
 const appState = {
@@ -59,7 +59,18 @@ function loadCartFromStorage() {
   const savedCart = localStorage.getItem('strideelite_cart');
   if (savedCart) {
     try {
-      appState.cart = JSON.parse(savedCart);
+      const parsed = JSON.parse(savedCart);
+      if (Array.isArray(parsed)) {
+        parsed.forEach(item => {
+          if (item.product && item.product.id) {
+            const freshProduct = productsData.find(p => p.id === item.product.id);
+            if (freshProduct) {
+              item.product.image = freshProduct.image; // 自動修復 stale localStorage 中的圖片路徑
+            }
+          }
+        });
+        appState.cart = parsed;
+      }
     } catch (e) {
       appState.cart = [];
     }
@@ -79,7 +90,7 @@ function addToCart(productId, size, color, quantity = 1) {
 
   // 檢查購物車中是否已有相同商品、尺寸和顏色
   const existingItemIndex = appState.cart.findIndex(
-    item => item.product.id === productId && item.size === size && item.color === color
+    item => item.product.id === productId && String(item.size) === String(size) && item.color === color
   );
 
   if (existingItemIndex > -1) {
@@ -100,7 +111,7 @@ function addToCart(productId, size, color, quantity = 1) {
 
 function removeFromCart(productId, size, color) {
   appState.cart = appState.cart.filter(
-    item => !(item.product.id === productId && item.size === size && item.color === color)
+    item => !(item.product.id === productId && String(item.size) === String(size) && item.color === color)
   );
   saveCartToStorage();
   showToast("已從購物車移除商品", "success");
@@ -286,11 +297,21 @@ function renderView() {
 
   switch (appState.currentView) {
     case 'home':
-      container.innerHTML = getHomeViewHTML();
-      setupHomeEvents();
+      const staticHome = container.querySelector('.hero-section');
+      if (staticHome && !container.querySelector('.fa-spinner')) {
+        setupHomeEvents();
+      } else {
+        container.innerHTML = getHomeViewHTML();
+        setupHomeEvents();
+      }
       break;
     case 'about':
-      container.innerHTML = getAboutViewHTML();
+      const staticAbout = container.querySelector('.about-content');
+      if (staticAbout && !container.querySelector('.fa-spinner')) {
+        // 靜態頁面無需重新渲染
+      } else {
+        container.innerHTML = getAboutViewHTML();
+      }
       break;
     case 'mens':
     case 'womens':
@@ -308,15 +329,28 @@ function renderView() {
       }
       break;
     case 'care':
-      container.innerHTML = getCareViewHTML();
-      setupCareEvents();
+      const staticCare = container.querySelector('.care-guide-container');
+      if (staticCare && !container.querySelector('.fa-spinner')) {
+        setupCareEvents();
+      } else {
+        container.innerHTML = getCareViewHTML();
+        setupCareEvents();
+      }
       break;
     case 'contact':
-      container.innerHTML = getContactViewHTML();
-      setupContactEvents();
+      const staticContact = container.querySelector('.contact-container');
+      if (staticContact && !container.querySelector('.fa-spinner')) {
+        setupContactEvents();
+      } else {
+        container.innerHTML = getContactViewHTML();
+        setupContactEvents();
+      }
       break;
     case 'product':
-      if (appState.currentProductId) {
+      const staticProduct = container.querySelector('.detail-grid');
+      if (staticProduct && !container.querySelector('.fa-spinner')) {
+        setupProductDetailEvents();
+      } else if (appState.currentProductId) {
         container.innerHTML = getProductDetailViewHTML(appState.currentProductId);
         setupProductDetailEvents();
       } else {
@@ -324,7 +358,7 @@ function renderView() {
       }
       break;
     default:
-      container.innerHTML = `<div style="padding: 100px; text-align: center;"><h2>頁面未找到</h2><a href="#home" class="btn btn-primary">返回首頁</a></div>`;
+      container.innerHTML = `<div style="padding: 100px; text-align: center;"><h2>頁面未找到</h2><a href="index.html" class="btn btn-primary">返回首頁</a></div>`;
   }
 }
 
@@ -333,7 +367,7 @@ function renderView() {
 // 1. 首頁 (Home)
 function getHomeViewHTML() {
   // 挑選 4 個精選商品顯示在首頁
-  const featuredIds = ['men-runner', 'women-heels', 'kids-runner', 'care-waterproof'];
+  const featuredIds = ['陳如雪的鞋子商店-極光炫能專業跑鞋', '陳如雪的鞋子商店-魅影紅伶時尚尖頭高跟鞋', '陳如雪的鞋子商店-彩虹旋風超輕量兒童運動鞋', '陳如雪的鞋子商店-御盾奈米超感防水防污噴霧'];
   const featuredProducts = productsData.filter(p => featuredIds.includes(p.id));
   const featuredHTML = featuredProducts.map(p => getProductCardHTML(p)).join('');
 
@@ -363,7 +397,7 @@ function getHomeViewHTML() {
         <div class="grid-categories">
           <div class="category-card" onclick="window.location.href = 'mens.html'">
             <div class="category-img-wrapper">
-              <img src="assets/images/men_oxford.png" alt="紳士男鞋系列" title="紳士男鞋系列">
+              <img src="assets/images/陳如雪的鞋子商店-英倫經典典藏雕花皮鞋.png" alt="紳士男鞋系列" title="紳士男鞋系列">
             </div>
             <div class="category-info">
               <h3>紳士男鞋系列</h3>
@@ -372,7 +406,7 @@ function getHomeViewHTML() {
           </div>
           <div class="category-card" onclick="window.location.href = 'womens.html'">
             <div class="category-img-wrapper">
-              <img src="assets/images/women_heels.png" alt="女鞋系列">
+              <img src="assets/images/陳如雪的鞋子商店-魅影紅伶時尚尖頭高跟鞋.png" alt="女鞋系列" title="優雅女鞋系列">
             </div>
             <div class="category-info">
               <h3>優雅女鞋系列</h3>
@@ -381,7 +415,7 @@ function getHomeViewHTML() {
           </div>
           <div class="category-card" onclick="window.location.href = 'kids.html'">
             <div class="category-img-wrapper">
-              <img src="assets/images/kids_runner.png" alt="童鞋系列">
+              <img src="assets/images/陳如雪的鞋子商店-彩虹旋風超輕量兒童運動鞋.png" alt="童鞋系列" title="繽紛童鞋系列">
             </div>
             <div class="category-info">
               <h3>繽紛童鞋系列</h3>
@@ -478,7 +512,7 @@ function getAboutViewHTML() {
             <p>在運動領域，StrideElite 導入最新氮氣防震技術，專為慢跑小白設計的【新手慢跑鞋】能帶來完美避震，極具【推薦】價值；而進階【慢跑鞋】更獲跑友神級【推薦】。奔馳球場的健兒也能在此找到高 CP 值的【平價】裝備，這款抗扭【籃球鞋】備受教練肯定的抓地力，讓這款【籃球鞋】被高度【推薦】。此外，不論是經典百搭的【黑色】科技【運動鞋】，還是講求極速穿脫的【無鞋帶】包覆【運動鞋】，均能滿足多元訓練。我們更打造專屬【健身訓練鞋】，給予【女】性最穩固的支撐力，而機能【運動鞋】也是我們極力【推薦】給所有熱愛運動【女】性的不二之選。</p>
           </div>
           <div class="about-image">
-            <img src="assets/images/men_oxford.png" alt="手工製鞋工藝">
+            <img src="assets/images/陳如雪的鞋子商店-英倫經典典藏雕花皮鞋.png" alt="手工製鞋工藝">
           </div>
         </div>
 
@@ -489,7 +523,7 @@ function getAboutViewHTML() {
             <p>在步履不停的路上，我們悉心守護全家人的足部健康，更愛護這片土地。針對喜愛探險的朋友，我們以環境友善材質打造機能【水陸兩用鞋】，在戶外圈極受【推薦】。為了解決通勤族的疲勞，環保減壓的【久站鞋】深受上班族【推薦】，是各行各業的必備好物；若您的腳步深受足疾困擾，專為【足底筋膜炎】打造的舒壓【專用鞋款】則能重塑舒適步伐。針對下一代，我們成立了【兒童】永續運動專區，是家長採購【足球鞋】首選的【專賣店】；週末出遊則有全回收料件的【兒童】【洞洞鞋】相伴。面對最讓人頭痛的【白鞋變黃】問題，我們建議在全新【鞋子】落地前，噴上對自然無害的【防水】防污【噴霧】，這招深受鞋友【推薦】，更是延長鞋履壽命、實踐永續生活的不二法門。</p>
           </div>
           <div class="about-image">
-            <img src="assets/images/logo.png" alt="綠色環保材料">
+            <img src="assets/images/陳如雪的鞋子商店-Logo.png" alt="綠色環保材料">
           </div>
         </div>
 
@@ -666,7 +700,7 @@ function getCareViewHTML() {
 
   return `
     <div class="page-view">
-      <section class="about-hero" style="height: 300px; background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('assets/images/care_waterproof.png'); background-color: #1a1a17;">
+      <section class="about-hero" style="height: 300px; background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('assets/images/陳如雪的鞋子商店-御盾奈米超感防水防污噴霧.png'); background-color: #1a1a17;">
         <div class="hero-overlay"></div>
         <div class="hero-content">
           <h2 class="hero-title">鞋類維修與保養指南</h2>
@@ -748,7 +782,7 @@ function renderCareGuideContent() {
     leather: {
       title: "紳士真皮皮鞋保養黃金法則",
       desc: "真皮皮革富含天然纖維與油脂，隨著穿著時間會逐漸流失。定期滋養能使皮質維持水潤彈性，避免乾裂失去光澤。",
-      img: "assets/images/care_cream.png",
+      img: "assets/images/陳如雪的鞋子商店-煥彩蜂蠟天然皮革滋養霜.png",
       steps: [
         { num: "1", title: "乾刷除塵", desc: "使用馬毛刷大面積刷拭，將皮鞋縫隙及浮塵清除乾淨。" },
         { num: "2", title: "深層滋養", desc: "用棉布沾取少量煥彩蜂蠟滋養霜，均勻以畫圓方式揉入皮革。" },
@@ -759,7 +793,7 @@ function renderCareGuideContent() {
     sneaker: {
       title: "針織與編織網眼運動鞋清潔妙招",
       desc: "運動跑鞋與針織鞋面容易吸附泥沙與汗液，不建議整雙丟洗衣機，否則容易造成溢膠或變形。請採用半乾式手工精細清潔法。",
-      img: "assets/images/care_brush.png",
+      img: "assets/images/陳如雪的鞋子商店-大師級雙面極致清潔馬毛刷.png",
       steps: [
         { num: "1", title: "取出鞋墊", desc: "把鞋帶與鞋墊拆下，將它們單獨浸泡在溫和中性肥皂水中清洗。" },
         { num: "2", title: "毛刷打濕", desc: "取清潔刷沾水，甩掉多餘水分，滴上專用球鞋清潔液。" },
@@ -770,7 +804,7 @@ function renderCareGuideContent() {
     waterproof: {
       title: "御盾防水噴霧正確噴灑指南",
       desc: "防水防污噴霧是在鞋面最外層附著一層撥水分子粒子，為發揮最大效用，鞋子表面的潔淨度與噴灑距離是成敗的關鍵。",
-      img: "assets/images/care_waterproof.png",
+      img: "assets/images/陳如雪的鞋子商店-御盾奈米超感防水防污噴霧.png",
       steps: [
         { num: "1", title: "確保乾燥", desc: "務必在鞋子完全乾淨且乾燥的狀態下使用，灰塵會降低撥水因子附著力。" },
         { num: "2", title: "搖勻噴霧", desc: "使用前上下搖晃防水噴霧罐身，使其內部奈米粒子混合均勻。" },
@@ -811,7 +845,7 @@ function renderCareGuideContent() {
 function getContactViewHTML() {
   return `
     <div class="page-view">
-      <section class="about-hero" style="height: 250px; background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('assets/images/men_hiking.png'); background-position: center bottom;" alt="聯絡我們" title="聯絡我們">
+      <section class="about-hero" style="height: 250px; background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('assets/images/陳如雪的鞋子商店-巔峰行者全地形防水登山靴.png'); background-position: center bottom;" alt="聯絡我們" title="聯絡我們">
         <div class="hero-overlay"></div>
         <div class="hero-content">
           <h2 class="hero-title">聯絡我們 (Contact Us)</h2>
@@ -910,7 +944,7 @@ function getContactViewHTML() {
       <section style="max-width: 1200px; margin: 40px auto 80px; padding: 0 30px;">
         <div class="glass-panel" style="padding: 10px; border-radius: var(--border-radius-lg);">
           <div style="width: 100%; height: 350px; background-color: var(--footer-bg); border-radius: var(--border-radius-md); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #ffffff; gap: 15px; position: relative; overflow: hidden;">
-            <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/logo.png') no-repeat center center; background-size: contain; filter: blur(3px); opacity: 0.15;"></div>
+            <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/陳如雪的鞋子商店-Logo.png') no-repeat center center; background-size: contain; filter: blur(3px); opacity: 0.15;"></div>
             <i class="fas fa-map-marked-alt" style="font-size: 3rem; color: var(--primary-gold); z-index: 1;"></i>
             <h4 style="z-index: 1; font-weight: 700;">StrideElite 台北旗艦店 GPS 實時定位</h4>
             <p style="z-index: 1; color: var(--accent-gold); font-size: 0.9rem;">(捷運忠孝敦化站 3 號出口，步行約 3 分鐘)</p>
